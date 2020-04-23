@@ -6,7 +6,7 @@
  */
 
 import * as React from 'react';
-import { copyToClipboard, copyToClipboardWithClipboardAPI, copyToClipboardWithExecCommand } from "../src";
+import { writeToClipboard, writeToClipboardWithClipboardAPI, writeToClipboardWithExecCommand } from "../src";
 
 // tslint:disable-next-line: no-default-export
 export default {
@@ -29,7 +29,7 @@ export const Dynamic: React.FC = () => {
         </div>
         <button
             onClick={async () => {
-                await copyToClipboard(value);
+                await writeToClipboard(value);
             }}
         >Copy</button>
     </div>);
@@ -51,7 +51,7 @@ export const ClipboardAPI: React.FC = () => {
         </div>
         <button
             onClick={async () => {
-                await copyToClipboardWithClipboardAPI(value);
+                await writeToClipboardWithClipboardAPI(value);
             }}
         >Copy</button>
     </div>);
@@ -73,7 +73,7 @@ export const ExecCommandAPI: React.FC = () => {
         </div>
         <button
             onClick={() => {
-                copyToClipboardWithExecCommand(value);
+                writeToClipboardWithExecCommand(value);
             }}
         >Copy</button>
     </div>);

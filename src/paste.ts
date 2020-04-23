@@ -6,13 +6,13 @@
 
 import { testClipboardSupport } from "./support";
 
-export const pasteFromClipboardWithClipboardAPI = async (): Promise<string> => {
+export const readFromClipboardWithClipboardAPI = async (): Promise<string> => {
 
     const text: string = await navigator.clipboard.readText();
     return text;
 };
 
-export const pasteFromClipboardWithExecCommand = (): string => {
+export const readFromClipboardWithExecCommand = (): string => {
 
     const textarea: HTMLTextAreaElement = document.createElement('textarea');
 
@@ -34,10 +34,10 @@ export const pasteFromClipboardWithExecCommand = (): string => {
     return text;
 };
 
-export const pasteFromClipboard = async (): Promise<string> => {
+export const readFromClipboard = async (): Promise<string> => {
 
     if (testClipboardSupport()) {
-        return await pasteFromClipboardWithClipboardAPI();
+        return await readFromClipboardWithClipboardAPI();
     }
-    return pasteFromClipboardWithExecCommand();
+    return readFromClipboardWithExecCommand();
 };
