@@ -28,7 +28,6 @@ export const Dynamic: React.FC = () => {
         <button
             onClick={async () => {
                 const result: boolean = await copyToClipboard(value);
-                alert(result);
             }}
         >Copy</button>
     </div>);
@@ -49,7 +48,6 @@ export const ClipboardAPI: React.FC = () => {
         <button
             onClick={async () => {
                 const result: boolean = await copyToClipboardWithClipboardAPI(value);
-                alert(result);
             }}
         >Copy</button>
     </div>);
@@ -70,7 +68,6 @@ export const ExecCommandAPI: React.FC = () => {
         <button
             onClick={() => {
                 const result: boolean = copyToClipboardWithExecCommand(value);
-                alert(result);
             }}
         >Copy</button>
     </div>);

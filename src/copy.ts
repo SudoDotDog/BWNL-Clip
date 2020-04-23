@@ -15,14 +15,22 @@ export const copyToClipboardWithClipboardAPI = async (text: string): Promise<boo
 export const copyToClipboardWithExecCommand = (text: string): boolean => {
 
     const textarea: HTMLTextAreaElement = document.createElement('textarea');
-    textarea.style.display = 'none';
+
     textarea.style.height = '0';
     textarea.style.width = '0';
+    textarea.style.padding = '0';
+    textarea.style.margin = '0';
+    textarea.style.border = '1px solid transparent';
+    textarea.style.overflow = 'hidden';
+
+    document.body.appendChild(textarea);
 
     textarea.value = text;
     textarea.select();
 
     const result: boolean = document.execCommand('copy');
+
+    document.body.removeChild(textarea);
     return result;
 };
 
