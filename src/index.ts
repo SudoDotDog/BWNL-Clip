@@ -5,4 +5,5 @@
  */
 
 export * from "./copy";
+export * from "./support";
 
