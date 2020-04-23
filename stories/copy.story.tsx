@@ -18,16 +18,18 @@ export const Dynamic: React.FC = () => {
     const [value, setValue] = React.useState('Target');
 
     return (<div>
-        <input
-            type="text"
-            value={value}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                setValue(event.target.value);
-            }}
-        />
+        <div>
+            <input
+                type="text"
+                value={value}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    setValue(event.target.value);
+                }}
+            />
+        </div>
         <button
             onClick={async () => {
-                const result: boolean = await copyToClipboard(value);
+                await copyToClipboard(value);
             }}
         >Copy</button>
     </div>);
@@ -38,16 +40,18 @@ export const ClipboardAPI: React.FC = () => {
     const [value, setValue] = React.useState('Target');
 
     return (<div>
-        <input
-            type="text"
-            value={value}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                setValue(event.target.value);
-            }}
-        />
+        <div>
+            <input
+                type="text"
+                value={value}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    setValue(event.target.value);
+                }}
+            />
+        </div>
         <button
             onClick={async () => {
-                const result: boolean = await copyToClipboardWithClipboardAPI(value);
+                await copyToClipboardWithClipboardAPI(value);
             }}
         >Copy</button>
     </div>);
@@ -58,16 +62,18 @@ export const ExecCommandAPI: React.FC = () => {
     const [value, setValue] = React.useState('Target');
 
     return (<div>
-        <input
-            type="text"
-            value={value}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                setValue(event.target.value);
-            }}
-        />
+        <div>
+            <input
+                type="text"
+                value={value}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    setValue(event.target.value);
+                }}
+            />
+        </div>
         <button
             onClick={() => {
-                const result: boolean = copyToClipboardWithExecCommand(value);
+                copyToClipboardWithExecCommand(value);
             }}
         >Copy</button>
     </div>);
