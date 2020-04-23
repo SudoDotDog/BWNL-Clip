@@ -1,0 +1,18 @@
+{
+    "cSpell.words": [
+        "Hoverable",
+        "RMRF",
+        "WMXPY",
+        "antd",
+        "bwnl",
+        "codecov",
+        "docgen",
+        "esnext",
+        "prebuilts",
+        "sudoo",
+        "triforce",
+        "tshook"
+    ],
+    "tslint.configFile": "typescript/tslint.json",
+    "files.eol": "\n"
+}
