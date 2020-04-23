@@ -1,6 +1,6 @@
 /**
  * @author WMXPY
- * @namespace Print
+ * @namespace Clip
  * @description Placeholder
  * @override Unit Test
  */
