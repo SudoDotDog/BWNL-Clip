@@ -6,18 +6,72 @@
  */
 
 import * as React from 'react';
-import { copyToClipboard } from "../src";
+import { copyToClipboard, copyToClipboardWithClipboardAPI, copyToClipboardWithExecCommand } from "../src";
 
 // tslint:disable-next-line: no-default-export
 export default {
     title: 'Copy',
 };
 
-export const Simple = () => {
+export const Dynamic: React.FC = () => {
 
-    return (<button
-        onClick={() => copyToClipboard()}
-    >
-        Copy
-    </button>);
+    const [value, setValue] = React.useState('Target');
+
+    return (<div>
+        <input
+            type="text"
+            value={value}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                setValue(event.target.value);
+            }}
+        />
+        <button
+            onClick={async () => {
+                const result: boolean = await copyToClipboard(value);
+                alert(result);
+            }}
+        >Copy</button>
+    </div>);
+};
+
+export const ClipboardAPI: React.FC = () => {
+
+    const [value, setValue] = React.useState('Target');
+
+    return (<div>
+        <input
+            type="text"
+            value={value}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                setValue(event.target.value);
+            }}
+        />
+        <button
+            onClick={async () => {
+                const result: boolean = await copyToClipboardWithClipboardAPI(value);
+                alert(result);
+            }}
+        >Copy</button>
+    </div>);
+};
+
+export const ExecCommandAPI: React.FC = () => {
+
+    const [value, setValue] = React.useState('Target');
+
+    return (<div>
+        <input
+            type="text"
+            value={value}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                setValue(event.target.value);
+            }}
+        />
+        <button
+            onClick={() => {
+                const result: boolean = copyToClipboardWithExecCommand(value);
+                alert(result);
+            }}
+        >Copy</button>
+    </div>);
 };

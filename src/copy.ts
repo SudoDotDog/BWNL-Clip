@@ -4,7 +4,7 @@
  * @description Copy
  */
 
-import { testClipboardSupport } from "support";
+import { testClipboardSupport } from "./support";
 
 export const copyToClipboardWithClipboardAPI = async (text: string): Promise<boolean> => {
 
