@@ -27,7 +27,7 @@ export const readFromClipboardWithExecCommand = (): string => {
 
     textarea.select();
 
-    const result: boolean = document.execCommand('paste');
+    document.execCommand('paste');
     const text: string = textarea.value;
 
     document.body.removeChild(textarea);
