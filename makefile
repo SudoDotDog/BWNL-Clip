@@ -1,5 +1,5 @@
 # Paths
-etsconfig_build_path := typescript/tsconfig.build.json
+tsconfig_build_path := typescript/tsconfig.build.json
 
 # NPX functions
 tsc := node_modules/.bin/tsc
